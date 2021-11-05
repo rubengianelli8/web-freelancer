@@ -11,7 +11,7 @@ import { Link, useRouteMatch } from 'react-router-dom'
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
 
 const Nav = ({webLinks = [{ name: 'Nosotros', path: '/nosotros' }]}) => {
-    const activeTextColor = 'tertiary'
+    const activeTextColor = '#5ccb5f'
     //states
     const [display, changeDisplay] = useState('none')
 
@@ -26,7 +26,7 @@ const Nav = ({webLinks = [{ name: 'Nosotros', path: '/nosotros' }]}) => {
         />
     ))
     return (
-        <Stack>
+        <Stack bgColor="#002800" color="#fff" py="5px">
         <Flex>
           <Flex display={['none', 'none', 'flex', 'flex']}>
             <Link to='/'>
@@ -53,6 +53,7 @@ const Nav = ({webLinks = [{ name: 'Nosotros', path: '/nosotros' }]}) => {
               size='lg'
               mr={2}
               my={3}
+              color={"#5ccb5f"}
               icon={<HamburgerIcon />}
               display={['flex', 'flex', 'none', 'none']}
               onClick={() => changeDisplay('flex')}
@@ -76,6 +77,7 @@ const Nav = ({webLinks = [{ name: 'Nosotros', path: '/nosotros' }]}) => {
                 mt={3}
                 mr={3}
                 size='md'
+                color={"#5ccb5f"}
                 icon={<CloseIcon />}
                 onClick={() => changeDisplay('none')}
               />
@@ -107,7 +109,7 @@ const Active = ({ activeOnlyWhenExact, to, label, activeTextColor }) => {
     if (activeMatch) {
       return (
         <Link to={to}>
-          <Button variant='ghost' my={3} w='100%' color={activeTextColor}>
+          <Button colorScheme="white"  align="center" my={3} w='100%' color={activeTextColor}>
             {label}
           </Button>
         </Link>
@@ -116,7 +118,7 @@ const Active = ({ activeOnlyWhenExact, to, label, activeTextColor }) => {
       return (
         <div>
           <Link to={to}>
-            <Button variant='ghost' my={3} w='100%'>
+            <Button colorScheme="white"  my={3} w='100%'>
               {label}
             </Button>
           </Link>
