@@ -26,27 +26,25 @@ const Nav = ({webLinks = [{ name: 'Nosotros', path: '/nosotros' }]}) => {
         />
     ))
     return (
-        <Stack bgColor="#002800" color="#fff" py="5px">
-        <Flex>
-          <Flex display={['none', 'none', 'flex', 'flex']}>
-            <Link to='/'>
+        <Stack bgColor="#111" color="#fff" py="5px">
+        <Flex alignItems="flex-center">
+          
+          <Link to='/' >
               <Image
                 src={'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Playstation_logo_colour.svg/2560px-Playstation_logo_colour.svg.png'}
                 alt={'texto alternativo'}
                 maxW='5rem'
-                mt={1}
                 ml={1}
                 mr={3}
                 borderRadius={'5px'}
                 maxh='30px'
                 fallbackSrc='https://via.placeholder.com/150'
               />
-            </Link>
-            <Flex justify="flex-end">
-                {itemsNav}
-            </Flex>
-          </Flex>
+          </Link>
           <Spacer />
+          <Flex display={['none', 'none', 'flex', 'flex']} mr="0">
+            {itemsNav}          
+          </Flex>
           <Flex m={2} p={2}>
             <IconButton
               aria-label='Open Menu'
@@ -54,6 +52,7 @@ const Nav = ({webLinks = [{ name: 'Nosotros', path: '/nosotros' }]}) => {
               mr={2}
               my={3}
               color={"#5ccb5f"}
+              bgColor={"#888"}
               icon={<HamburgerIcon />}
               display={['flex', 'flex', 'none', 'none']}
               onClick={() => changeDisplay('flex')}
